@@ -1,0 +1,13 @@
+{
+	"tasks": {
+		"dev": "deno run -A --watch=index.ts index.ts"
+	},
+	"importMap": "./import_map.json",
+	"compilerOptions": {},
+	"fmt": {
+		"options": {
+			"indentWidth": 4,
+			"useTabs": true
+		}
+	}
+}
