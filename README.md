@@ -1,7 +1,5 @@
 # _**Deno server - file based routing**_
 
-<br />
-
 # **Overview**
 
 This template helps to achive `file-based-routing` with `oak` and `deno` only for creating `server`.
@@ -12,8 +10,6 @@ This template helps to achive `file-based-routing` with `oak` and `deno` only fo
 2. [_**Routing**_](#routing)
 3. [_**Usage**_](#usage)
 4. [_**Licence**_](#licence)
-
-<br />
 
 # _**Tree**_
 
@@ -46,8 +42,6 @@ This template helps to achive `file-based-routing` with `oak` and `deno` only fo
 ├── routes.ts
 ```
 
-<br />
-
 # **Routing**
 
 <div id="routing" />
@@ -56,15 +50,11 @@ This template helps to achive `file-based-routing` with `oak` and `deno` only fo
 
 -   The files inside the `src/routes` directory can be used to define most common patterns.
 
-<br />
-
 1. #### **Index soutes**
 
     - The router will automatically route files named `index` to the root of the directory.
     - `src/routes/index.ts` → `/`
     - `src/routes/blog/index.ts` → `/blog`
-
-<br />
 
 2. #### **Nested routes**
 
@@ -72,14 +62,10 @@ This template helps to achive `file-based-routing` with `oak` and `deno` only fo
     - `src/routes/blog/first-post.ts` → `/blog/first-post`
     - `src/routes/dashboard/settings/username.ts` → `/dashboard/settings/username`
 
-<br />
-
 3. #### **Dynamic routes segments**
     - To match a dynamic segment, you can use the bracket syntax. This allows you to match named parameters.
     - `src/routes/blog/[slug].ts` → `/blog/:slug` (`/blog/hello-world`)
     - `src/routes/[username]/settings.ts` → `/:username/settings` (`/foo/settings`)
-
-<br />
 
 # **Usage**
 
@@ -92,8 +78,6 @@ This template helps to achive `file-based-routing` with `oak` and `deno` only fo
     deno run --allow-read --allow-write --allow-run --watch=src/ dev.ts
     ```
 
-<br />
-
 2. `Production` mode.
 
     ```bash
@@ -101,16 +85,12 @@ This template helps to achive `file-based-routing` with `oak` and `deno` only fo
     deno run --allow-net main.ts
     ```
 
-<br />
-
 3. Generate `routes.ts`.
 
     ```bash
     deno task generate-routes # or
     deno run --allow-read --allow-write dev.ts --no-server
     ```
-
-<br />
 
 # **LICENCE**
 
