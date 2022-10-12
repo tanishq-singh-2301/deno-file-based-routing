@@ -31,14 +31,14 @@ const IMPORTS: string[] = [];
 const ROUTES: string[] = [];
 let i = 0;
 
-const routes_path = walk("./routes", {
+const routes_path = walk("./src/routes", {
 	exts: [".ts"],
 	includeDirs: false,
 });
 
 for await (const route of routes_path) {
 	let name = route.path
-		.replace(/routes|index|\.ts$/g, "")
+		.replace(/src\/routes|index|\.ts$/g, "")
 		.replace(/\[\.{3}.+\]/, "*")
 		.replace(/\[(.+)\]/, ":$1");
 
@@ -51,6 +51,4 @@ for await (const route of routes_path) {
 }
 
 await Deno.writeTextFile("./routes.ts", template(IMPORTS, ROUTES));
-const p = Deno.run({ cmd: ["deno", "run", "-A", "main.ts"] })
-
-console.log(await p.status());
+await Deno.run({ cmd: ["deno", "task", "start"] }).status();

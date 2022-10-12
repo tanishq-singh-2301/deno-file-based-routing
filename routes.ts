@@ -3,14 +3,14 @@
 // This file is automatically updated during development when running dev.ts
 
 import { Handler } from "$types/routes.ts";
-import $0 from "./routes/v1/my-name/[name].ts";
-import $1 from "./routes/v1/index.ts";
-import $2 from "./routes/v2/my-name/[name].ts";
-import $3 from "./routes/v2/my-name/index.ts";
-import $4 from "./routes/v2/kaju.ts";
-import $5 from "./routes/v2/index.ts";
-import $6 from "./routes/hlo.ts";
-import $7 from "./routes/index.ts"
+import $0 from "./src/routes/v1/my-name/[name].ts";
+import $1 from "./src/routes/v1/index.ts";
+import $2 from "./src/routes/v2/my-name/[name].ts";
+import $3 from "./src/routes/v2/my-name/index.ts";
+import $4 from "./src/routes/v2/kaju.ts";
+import $5 from "./src/routes/v2/index.ts";
+import $6 from "./src/routes/hlo.ts";
+import $7 from "./src/routes/index.ts"
 
 export type ROUTES = {
 	"/v1/my-name/:name": Handler;

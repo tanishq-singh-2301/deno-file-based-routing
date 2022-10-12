@@ -11,4 +11,8 @@ Object.keys(manifest.routes).map((name) =>
 app.use(router.routes());
 app.use(router.allowedMethods());
 
+app.addEventListener("listen", ({ port }) =>
+	console.log(`App is listening on port http://localhost:${port}`)
+);
+
 await app.listen({ port: 8000 });
