@@ -6,16 +6,16 @@ const template = (IMPORTS: string[], ROUTES: string[]) =>
 // This file is automatically updated during development when running dev.ts
 
 import { Handler } from "$types/routes.ts";
-${IMPORTS.join("\n")}
+${IMPORTS.join(";\n")}
 
 export type ROUTES = {
 	${ROUTES.join("\n	").replaceAll(/\$([0-9])*\d/g, "Handler;")}
-}
+};
 
 export type Manifest = {
 	routes: ROUTES;
 	baseUrl: string;
-}
+};
 
 const manifest: Manifest = {
 	routes: {
@@ -51,3 +51,6 @@ for await (const route of routes_path) {
 }
 
 await Deno.writeTextFile("./routes.ts", template(IMPORTS, ROUTES));
+const p = Deno.run({ cmd: ["deno", "run", "-A", "main.ts"] })
+
+console.log(await p.status());
